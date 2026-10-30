@@ -3,6 +3,7 @@ from pathlib import Path
 import hashlib
 import io
 import json
+import shutil
 import sys
 import zipfile
 
@@ -36,12 +37,28 @@ js = js.replace('onClick:()=>a&&e(`MULTIPLAYER_LOBBY`),disabled:!a', 'onClick:()
 js = js.replace('onClick:()=>t(`GLOBAL_LEADERBOARD`)', 'disabled:!0,title:`Unavailable in the local web edition`')
 js = js.replace('children:a?`Race a real opponent head-to-head`:`Requires an internet connection`', 'children:`Unavailable in the local web edition`')
 js = js.replace('new Audio(`/Doomsday_Theme.mp3`)', 'new Audio(new URL(`../Doomsday_Theme.mp3`,import.meta.url))')
+# Remove the home-screen store download buttons from the local web edition.
+store_start = ',!Qo&&!B&&(0,H.jsxs)(`div`,{className:`flex gap-3 mt-5 w-full justify-center`'
+assert js.count(store_start) == 1
+start = js.index(store_start)
+end = js.index(']})]}),Vc=', start) + 3
+assert 'Download on the App Store' in js[start:end]
+assert 'Get it on Google Play' in js[start:end]
+js = js[:start] + js[end:]
+assert 'Download on the App Store' not in js
+assert 'Get it on Google Play' not in js
 bundle.write_text(js, encoding='utf-8')
 index = root / 'index.html'
 html = index.read_text(encoding='utf-8').replace(', maximum-scale=1.0, user-scalable=no', '')
 html = html.replace('<title>doomsday-trainer</title>', '<title>Doomsday Trainer — Web</title>')
 html = html.replace('<meta charset="UTF-8" />', '<meta charset="UTF-8" /><meta http-equiv="Content-Security-Policy" content="connect-src \'self\'; object-src \'none\'">')
+html = html.replace('    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />', '''    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="theme-color" content="#0A0A0A" />''')
 index.write_text(html, encoding='utf-8')
+for name in ('favicon.svg', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'manifest.webmanifest'):
+    shutil.copyfile(Path(__file__).parent / name, root / name)
 manifest_path = Path(__file__).parent / 'evidence/extraction.json'
 manifest_path.parent.mkdir(exist_ok=True)
 manifest_path.write_text(json.dumps({'package_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'original_assets':manifest},indent=2),encoding='utf-8')

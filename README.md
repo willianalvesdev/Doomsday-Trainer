@@ -14,7 +14,7 @@ Mantidos: jogo de datas, treino guiado, drills, tutorial, treino personalizado, 
 
 Battle e ranking global ficam desativados: seus serviços PlayFab não fazem parte do APK. A autenticação automática e a inicialização de analytics foram removidas. Uma política `connect-src 'self'` impede chamadas de dados a servidores externos. A fonte opcional Space Grotesk ainda vem do Google Fonts; a fonte retro VT323 está no pacote.
 
-A música usa um caminho relativo para funcionar também em subpastas. Zoom do navegador foi habilitado. Compartilhamento depende do suporte do navegador à Web Share API. A interface continua em inglês, como o pacote original.
+A música usa um caminho relativo para funcionar também em subpastas. Zoom do navegador foi habilitado. Os botões de download da App Store e Google Play foram removidos da tela inicial. Compartilhamento depende do suporte do navegador à Web Share API. A interface continua em inglês, como o pacote original.
 
 ## Proveniência e reconstrução
 
@@ -23,3 +23,7 @@ A música usa um caminho relativo para funcionar também em subpastas. Zoom do n
 REA: `evidence/javascript.json`, Evidence `ev_4a57bc21eb1fa8c19a759f25adb765926c277da2cafc8735a2fe4cbabc429fb6`, contém a análise estática da aplicação extraída antes das adaptações. A inspeção nativa do APKS não foi suportada pelo provedor disponível; o inventário ZIP foi feito com Python. A análise JavaScript REA concluiu normalmente.
 
 Testes no navegador são da versão web recuperada, não da execução do Android. Não foi feita publicação nem alteração do Roll/Joll.
+
+## Ícone e atalho no celular
+
+O favicon e os ícones de atalho usam a arte Doomsday fornecida pelo usuário. No celular, abra o site pelo navegador e use “Adicionar à Tela de Início”. Os PNGs de 180, 192 e 512 pixels derivam do SVG em `favicon.svg`; o manifesto define o nome e o ícone do atalho.
