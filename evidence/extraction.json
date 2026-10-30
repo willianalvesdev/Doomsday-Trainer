@@ -1,0 +1,17 @@
+{
+  "package_sha256": "91b5f5a2ad17c14a89d51f93c5f0f8e08fc33f606817a619f597616730eb941a",
+  "original_assets": {
+    "Doomsday_Theme.mp3": "119fd607456f42722bf7670ce77dd1f06b54902fc1be8bf7a55199c9af48930c",
+    "assets/index-D1Gt1iVR.css": "8d9bd1cf2e41786f590273ca324a9efa4a08076baed67aff9e2bf53c6ba6d004",
+    "assets/index-QHRtOYCg.js": "3afa61ec7fc51d4ad7909e3782603ff8f4e349725933ffc51529f797713ca00b",
+    "assets/web-C1vZSypG.js": "30f4cd64f4821ebfb7e0a14120ed47b2df171d5e7158aa853ba6fd2683ca5ad6",
+    "assets/web-CWx-l2QA.js": "cb1bcb983c0b231a26e85683cc7e788c496b1d1131ae92e1b25e4f99cb3146be",
+    "assets/web-pZ1lri4f.js": "62a544b0ae864eddb18faf7a3d0eb4d4b6ebd987aca311a82cad33e0e569fd48",
+    "cordova.js": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cordova_plugins.js": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "favicon.svg": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66",
+    "fonts/VT323.woff2": "6eaac28bcebf14ed1389b2526cd80588594ebe8201916620be8847e3eeb3bd29",
+    "icons.svg": "b45fa506195cfcdef406ba9f0c77b36ddc1a7c224040926ec70abc2fdea7b93a",
+    "index.html": "ffc85cba39b874bab00d0407f47863e937bfeec9bd8fe73082f0b2ae6f0189ed"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "rea_evidence_id": "ev_4a57bc21eb1fa8c19a759f25adb765926c277da2cafc8735a2fe4cbabc429fb6",
+  "observed": [
+    "Capacitor appId com.inefficientcode.doomsdaytrainer",
+    "12 original web assets extracted",
+    "Browser onboarding and date format selection",
+    "Training: April 4 anchor accepted; advanced to step 2/9",
+    "Game: 19 April 1821 Thursday accepted",
+    "Game: 6 September 2153 Monday rejected; Thursday shown",
+    "Streak 1 persisted across reload",
+    "Settings colour persisted across reload",
+    "Mobile home inspected at 390x844",
+    "No browser page errors in tested flow",
+    "Battle and global rankings disabled in local edition"
+  ],
+  "not_verified": [
+    "Android runtime parity",
+    "Every tutorial/drill/custom mode combination",
+    "Audio output on physical device",
+    "Native share sheet on phone"
+  ],
+  "scope": "Local training and local records; no original backend or analytics initialization"
+}
