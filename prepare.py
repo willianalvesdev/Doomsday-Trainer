@@ -47,6 +47,8 @@ assert 'Get it on Google Play' in js[start:end]
 js = js[:start] + js[end:]
 assert 'Download on the App Store' not in js
 assert 'Get it on Google Play' not in js
+assert js.count('url:Ve,dialogTitle:`Share Doomsday Trainer`') == 1
+js = js.replace('url:Ve,dialogTitle:`Share Doomsday Trainer`', 'url:`https://willianalvesdev.github.io/Doomsday-Trainer/`,dialogTitle:`Share Doomsday Trainer`')
 bundle.write_text(js, encoding='utf-8')
 index = root / 'index.html'
 html = index.read_text(encoding='utf-8').replace(', maximum-scale=1.0, user-scalable=no', '')
